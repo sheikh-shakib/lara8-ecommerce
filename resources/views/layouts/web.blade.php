@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/web/assets/css/chosen.min.css">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/web/assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets')}}/web/assets/css/color-01.css">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 	@livewireStyles
 </head>
 <body class="home-page home-01 ">
@@ -479,6 +480,8 @@
 	<script src="{{asset('assets')}}/web/assets/js/jquery.countdown.min.js"></script>
 	<script src="{{asset('assets')}}/web/assets/js/jquery.sticky.js"></script>
 	<script src="{{asset('assets')}}/web/assets/js/functions.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 	@livewireScripts
+	@stack('scripts')
 </body>
 </html>
