@@ -11,8 +11,8 @@
                         <form class="form-horizontal" wire:submit.prevent="updateHomeCategory">
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="">Choose Category</label>
-                                <div class="col-md-4" wire:ignore>
-                                    <select name="categories[]" multiple="multiple" id="" wire:model="selected_categories" class="sel_categories form-control">
+                                <div class="col-md-4" wire:ignore >
+                                    <select name="catgories[]" multiple="multiple" id="" wire:model="sel_catgories" class=" form-control">
                                         @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
@@ -42,11 +42,11 @@
 @push('scripts')
     <script>
         $(document).ready(function () {
-            $('.sel_categories').select2();
-            $('sel_categories').on('change', function (e) {
-                var data=$('.sel_categories').select2("val");
-                @this.set('selected_categories',data)
+            $('#sel_categories').select2();
+            $('#sel_categories').on('change', function (e) {
+                var data=$('#sel_categories').select2("val");
+                @this.set('sel_catgories',data);
             });
         });
-    </script>
+    </script> 
 @endpush

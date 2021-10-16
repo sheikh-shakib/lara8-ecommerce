@@ -8,20 +8,21 @@ use Livewire\Component;
 
 class AdminHomeCategoryComponent extends Component
 {
-    public $selected_categories=[];
+    public $sel_catgories=[];
     public $num_of_products;
 
     public function mount()
     {
         $category=HomeCategory::find(1);
-        $this->selected_categories=explode(',',$category->sel_catgories);
+        $this->sel_catgories=explode(',',$category->sel_catgories);
         $this->num_of_products=$category->num_of_products;
     }
 
     public function updateHomeCategory()
     {
         $category=HomeCategory::find(1);
-        $category->sel_catgories=implode(',',$this->selected_categories);
+        dd(explode(',',$category->sel_catgories));
+        $category->sel_catgories=implode(',',$this->sel_catgories);
         $category->num_of_products=$this->num_of_products;
         $category->save();
         session()->flash('msg','Category has been saved');
